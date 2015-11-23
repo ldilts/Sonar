@@ -258,6 +258,7 @@
 				TargetAttributes = {
 					A0E2680D1C020ECA00FA82C8 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 69ZM7V3AUZ;
 					};
 					A0E268211C020ECB00FA82C8 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -515,9 +516,10 @@
 			baseConfigurationReference = CD217C9D84B22135792A918E /* Pods-Sonar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.lucasdilts.Sonar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.lucasdilts.Sonar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Sonar/Bridging-Header.h";
 			};
@@ -528,9 +530,10 @@
 			baseConfigurationReference = 735A080D2A17FFDE1A084117 /* Pods-Sonar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.lucasdilts.Sonar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.lucasdilts.Sonar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Sonar/Bridging-Header.h";
 			};
