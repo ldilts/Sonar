@@ -13,6 +13,7 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     var logs = [AnyObject]()
     var sortedLogs: [String: [Log]] = [String: [Log]]()
     var keys: [String] = [String]()
+    var selectedLog: Log!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,15 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.keys[section]
     }
+    
+//    MARK: - Table view delegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var logsArray: [Log] = self.sortedLogs[self.keys[indexPath.section]]! as [Log]
+        self.selectedLog = logsArray[indexPath.row]
+        
+        self.performSegueWithIdentifier("LogSegue", sender: self)
+    }
 
 
     /*
@@ -143,14 +153,21 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
         self.performSegueWithIdentifier("UnwindToHome", sender: self)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "LogSegue" {
+            let destinatioViewController: LogViewController = segue.destinationViewController as! LogViewController
+            
+            destinatioViewController.log = selectedLog
+        }
     }
-    */
+
+    @IBAction func unwindToLogTableViewController(segue: UIStoryboardSegue) {
+        
+    }
 
 }

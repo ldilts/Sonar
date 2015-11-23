@@ -303,12 +303,64 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Y2d-MN-b0w" kind="unwind" identifier="UnwindToHome" unwindAction="unwindTohome:" id="mrR-Hh-xu3"/>
+                        <segue destination="1U3-fd-KsU" kind="show" identifier="LogSegue" id="0U4-i4-yfQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tv-aj-gnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Y2d-MN-b0w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1937" y="388"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="Zvs-yR-GQa">
+            <objects>
+                <viewController id="1U3-fd-KsU" customClass="LogViewController" customModule="Sonar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pyO-9s-CAn"/>
+                        <viewControllerLayoutGuide type="bottom" id="UFd-FO-mJ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6UX-E8-BeR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="joa-mS-eiv">
+                                <rect key="frame" x="280" y="223" width="41" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AaT-6o-aXg"/>
+                                    <constraint firstAttribute="width" constant="41" id="jYG-pI-KsQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-3H-cJm">
+                                <rect key="frame" x="8" y="289" width="584" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Gce-xW-AOs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.85882352941176465" green="0.89411764705882346" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9kK-3H-cJm" secondAttribute="trailing" constant="8" id="2F4-Do-cf6"/>
+                            <constraint firstItem="9kK-3H-cJm" firstAttribute="centerY" secondItem="6UX-E8-BeR" secondAttribute="centerY" id="J4b-Mx-gFG"/>
+                            <constraint firstItem="9kK-3H-cJm" firstAttribute="leading" secondItem="6UX-E8-BeR" secondAttribute="leading" constant="8" id="PkF-k3-QXH"/>
+                            <constraint firstItem="9kK-3H-cJm" firstAttribute="centerX" secondItem="6UX-E8-BeR" secondAttribute="centerX" id="dJU-7o-a0R"/>
+                            <constraint firstItem="joa-mS-eiv" firstAttribute="centerX" secondItem="6UX-E8-BeR" secondAttribute="centerX" id="jzN-Tf-5P1"/>
+                            <constraint firstItem="9kK-3H-cJm" firstAttribute="top" secondItem="joa-mS-eiv" secondAttribute="bottom" constant="16" id="vxK-5G-yGQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="9kK-3H-cJm" id="GhO-sN-rTG"/>
+                        <outlet property="imageView" destination="joa-mS-eiv" id="Gi9-sz-Pc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rD0-Wf-RTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="388"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eak-Zu-02h">
