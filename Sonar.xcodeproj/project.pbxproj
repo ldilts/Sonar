@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B64DA2F619D2BC8AB8637B /* libPods-Sonar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 052F325C9B16AD97F8C73113 /* libPods-Sonar.a */; };
 		A0524B1B1C021C2B009D5C27 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0524B1A1C021C2B009D5C27 /* Log.swift */; };
 		A09EA3211C031889008DB927 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09EA3201C031889008DB927 /* LogViewController.swift */; };
 		A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268111C020ECA00FA82C8 /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		A0E268321C020ECB00FA82C8 /* SonarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268311C020ECB00FA82C8 /* SonarUITests.swift */; };
 		A0F7F6971C026E8A00D6445D /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */; };
 		A0F7F6991C02705B00D6445D /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F6981C02705B00D6445D /* LogTableViewController.swift */; };
-		E077A64F633CB22B44D1262E /* libPods-Sonar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B97323FEA07DCD88AE6A5536 /* libPods-Sonar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052F325C9B16AD97F8C73113 /* libPods-Sonar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sonar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		735A080D2A17FFDE1A084117 /* Pods-Sonar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonar/Pods-Sonar.release.xcconfig"; sourceTree = "<group>"; };
 		A0524B171C021441009D5C27 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A0524B1A1C021C2B009D5C27 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		A0E268331C020ECB00FA82C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		A0F7F6981C02705B00D6445D /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
-		B97323FEA07DCD88AE6A5536 /* libPods-Sonar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sonar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD217C9D84B22135792A918E /* Pods-Sonar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sonar/Pods-Sonar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E077A64F633CB22B44D1262E /* libPods-Sonar.a in Frameworks */,
+				17B64DA2F619D2BC8AB8637B /* libPods-Sonar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0524B181C0218D1009D5C27 /* Other Files */ = {
+		A0524B181C0218D1009D5C27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				A0E268111C020ECA00FA82C8 /* AppDelegate.swift */,
@@ -97,7 +97,7 @@
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
 			);
-			name = "Other Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A0524B191C0218ED009D5C27 /* Controller */ = {
@@ -147,7 +147,7 @@
 				A0524B1C1C021C2F009D5C27 /* Model */,
 				A0E268151C020ECA00FA82C8 /* Main.storyboard */,
 				A0524B191C0218ED009D5C27 /* Controller */,
-				A0524B181C0218D1009D5C27 /* Other Files */,
+				A0524B181C0218D1009D5C27 /* Supporting Files */,
 			);
 			path = Sonar;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		B38A98E5E5AD7351968DE819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B97323FEA07DCD88AE6A5536 /* libPods-Sonar.a */,
+				052F325C9B16AD97F8C73113 /* libPods-Sonar.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

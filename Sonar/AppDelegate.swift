@@ -40,7 +40,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let deviceTokenStr = convertDeviceTokenToString(deviceToken)
+        // ...register device token with our Time Entry API server via REST
+        
+        
+        let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://192.168.1.106:8000"))
+        httpClient.parameterEncoding = AFJSONParameterEncoding
+        httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
+        
+        let parameter = ["dev_id": "22041992", "dev_type": "IOS", "reg_id": "\(deviceTokenStr)"]
+        
+        httpClient.postPath("api/devices", parameters: parameter, success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+            print("\nSuccess!!\n")
+        }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+            print("\nError!!\n")
+        })
 
-
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("\nDevice token for push notifications: FAIL -- ")
+        print(error.description + "\n")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("\nA Notification!!\n")
+    }
+    
+    private func convertDeviceTokenToString(deviceToken:NSData) -> String {
+        //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
+        var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "")
+        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "")
+        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        // Our API returns token in all uppercase, regardless how it was originally sent.
+        // To make the two consistent, I am uppercasing the token string here.
+        deviceTokenStr = deviceTokenStr.uppercaseString
+        return deviceTokenStr
+    }
+    
 }
 

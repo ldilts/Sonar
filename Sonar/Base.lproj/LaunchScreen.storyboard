@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Door Icon" translatesAutoresizingMaskIntoConstraints="NO" id="gFg-uq-q88">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Open Door Icon" translatesAutoresizingMaskIntoConstraints="NO" id="gFg-uq-q88">
                                 <rect key="frame" x="280" y="223" width="41" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -56,6 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Door Icon" width="41" height="50"/>
+        <image name="Open Door Icon" width="41" height="50"/>
     </resources>
 </document>

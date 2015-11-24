@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var startTransform: CGAffineTransform!
     var deltaAngle: CGFloat!
     
+//    MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,7 +35,18 @@ class ViewController: UIViewController {
         self.circularView.layer.cornerRadius = ((UIScreen.mainScreen().bounds.size.width + 100.0) / 2.0)
         
         self.configureRestKit()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.loadLogs()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        initializeNotificationServices()
     }
     
 //    MARK: - Actions
@@ -133,7 +146,7 @@ class ViewController: UIViewController {
     
     func configureRestKit() {
         // initialize AFNetworking HTTPClient
-        let baseURL: NSURL = NSURL(string: "http://127.0.0.1:8000/")!
+        let baseURL: NSURL = NSURL(string: "http://192.168.1.106:8000/")!
         let client: AFHTTPClient = AFHTTPClient(baseURL: baseURL)
         
         // initialize RestKit
@@ -211,6 +224,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initializeNotificationServices() -> Void {
+        let settings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        // This is an asynchronous method to retrieve a Device Token
+        // Callbacks are in AppDelegate.swift
+        // Success = didRegisterForRemoteNotificationsWithDeviceToken
+        // Fail = didFailToRegisterForRemoteNotificationsWithError
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
 
