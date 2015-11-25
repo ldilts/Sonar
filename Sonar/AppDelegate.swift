@@ -133,12 +133,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
             userInfo: userInfo)
         // [END_EXCLUDE]
+        
     }
     
     func application( application: UIApplication,
         didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
         fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
             print("\nNotification received: \(userInfo)\n")
+            let state:UIApplicationState  = application.applicationState
+            if (state == UIApplicationState.Active) {
+                NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataNotification", object: nil)
+            }
             // This works only if the app started the GCM service
             GCMService.sharedInstance().appDidReceiveMessage(userInfo);
             // Handle the received message

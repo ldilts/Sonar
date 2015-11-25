@@ -47,12 +47,20 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.loadLogs()
+//        [[NSNotificationCenter defaultCenter]addObserver:myView selector:@selector(NotificationReceived:) name:@"notification" object:nil];
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("loadLogs"), name: "ReloadDataNotification", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
 //        initializeNotificationServices()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReloadDataNotification", object: nil)
     }
     
 //    MARK: - Actions
