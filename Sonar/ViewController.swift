@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -57,20 +57,25 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReloadDataNotification", object: nil)
     }
     
+//    MARK: - UIGestureRecognizerDelegate
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
 //    MARK: - Actions
     
     @IBAction func viewLogsButtonTapped(sender: UIButton) {
         performSegueWithIdentifier("LogsSegue", sender: self)
     }
     
-    @IBAction func resetButtonTapped(sender: UIButton) {
+    @IBAction func circularViewDoubleTapped(sender: UITapGestureRecognizer) {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             self.circularView.transform = CGAffineTransformIdentity
             self.distanceLabel.text = "0.0"
-        }, completion: { (success: Bool) -> Void in
-            self.deltaAngle = 0.0
+            }, completion: { (success: Bool) -> Void in
+                self.deltaAngle = 0.0
         })
-        
     }
     
     @IBAction func fetchButtonTapped(sender: UIButton) {

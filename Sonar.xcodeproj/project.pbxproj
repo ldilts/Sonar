@@ -104,6 +104,7 @@
 				A0E268181C020ECA00FA82C8 /* Assets.xcassets */,
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
+				A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,7 +153,6 @@
 		A0E268101C020ECA00FA82C8 /* Sonar */ = {
 			isa = PBXGroup;
 			children = (
-				A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */,
 				A0524B1C1C021C2F009D5C27 /* Model */,
 				A0E268151C020ECA00FA82C8 /* Main.storyboard */,
 				A0524B191C0218ED009D5C27 /* Controller */,
