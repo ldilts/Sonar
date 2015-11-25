@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var circularView: UIView!
     
-    var logs: [Log]!
+    var logs: [Log] = [Log]()
     
     var distance = 0.0
     
@@ -27,13 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        if let data = TMDatabaseQueryAssistant.queryForEntity("Log") as? [Log] {
-            
-            self.logs = data
-        }
-        
-        
+    
         self.activityIndicator.startAnimating()
         self.statusLabel.alpha = 0.0
         self.statusLabel.hidden = true
@@ -160,22 +154,19 @@ class ViewController: UIViewController {
     
     func configureRestKit() {
         // initialize AFNetworking HTTPClient
+        let baseURL: NSURL = NSURL(string: "http://127.0.0.1:8000/")!
+        let client: AFHTTPClient = AFHTTPClient(baseURL: baseURL)
         
-        
-        
+        // initialize RestKit
+        let objectManager: RKObjectManager = RKObjectManager(HTTPClient: client)
         
         // setup object mappings
-        let logMapping: RKEntityMapping = RKEntityMapping(forEntityForName: "Log", inManagedObjectStore: RKManagedObjectStore.defaultStore())
-        
-        let attribute = ["log_date": "log_date",
-            "log_open": "log_open",
-            "log_id": "log_id"]
-        
-        logMapping.addAttributeMappingsFromDictionary(attribute)
+        let logMapping: RKObjectMapping = RKObjectMapping(forClass: Log.self)
+        logMapping.addAttributeMappingsFromArray(["log_date", "log_open", "log_id"])
         
         let responseDescriptor: RKResponseDescriptor! = RKResponseDescriptor(mapping: logMapping, method: RKRequestMethod.GET, pathPattern: "log/", keyPath: "results", statusCodes: NSIndexSet(index: 200))
         
-        RKObjectManager.sharedManager().addResponseDescriptor(responseDescriptor)
+        objectManager.addResponseDescriptor(responseDescriptor)
     }
     
     func loadLogs() {
@@ -186,11 +177,6 @@ class ViewController: UIViewController {
             
             self.logs = mappingResult.array() as! [Log]
             
-//            self.tableView.reloadData()
-            
-//            for log in self.logs {
-//                print("\nReceived: \((log as! Log).log_date)\n")
-//            }
             if self.logs.count > 0 {
                 self.activityIndicator.stopAnimating()
                 self.statusLabel.hidden = false
@@ -203,10 +189,6 @@ class ViewController: UIViewController {
                 }, completion: { (success: Bool) -> Void in
                     self.activityIndicator.hidden = true
                 })
-                
-                for log in self.logs {
-                    print("\n\(log.log_id) \(log.log_open) \(log.log_date)\n")
-                }
                 
             }
             

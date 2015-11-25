@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17B64DA2F619D2BC8AB8637B /* libPods-Sonar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 052F325C9B16AD97F8C73113 /* libPods-Sonar.a */; };
-		A0199FEF1C0508E300E0E56E /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A0199FED1C0508E300E0E56E /* Log.m */; };
-		A0199FF11C050CAC00E0E56E /* TMRestkitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */; };
-		A0199FF41C050DAA00E0E56E /* TMDatabaseQueryAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */; };
 		A0199FF61C050E6E00E0E56E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0199FF51C050E6E00E0E56E /* CoreData.framework */; };
 		A0199FF81C050E7400E0E56E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */; };
-		A0385E6E1C04E78A00E707B2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */; };
 		A0385E701C04EC0800E707B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */; };
 		A09EA3211C031889008DB927 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09EA3201C031889008DB927 /* LogViewController.swift */; };
 		A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268111C020ECA00FA82C8 /* AppDelegate.swift */; };
@@ -23,6 +19,7 @@
 		A0E2681C1C020ECA00FA82C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */; };
 		A0E268271C020ECB00FA82C8 /* SonarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268261C020ECB00FA82C8 /* SonarTests.swift */; };
 		A0E268321C020ECB00FA82C8 /* SonarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268311C020ECB00FA82C8 /* SonarUITests.swift */; };
+		A0F3E8C91C065FC50049EDBC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3E8C81C065FC50049EDBC /* Log.swift */; };
 		A0F7F6971C026E8A00D6445D /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */; };
 		A0F7F6991C02705B00D6445D /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F6981C02705B00D6445D /* LogTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,14 +44,8 @@
 /* Begin PBXFileReference section */
 		052F325C9B16AD97F8C73113 /* libPods-Sonar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sonar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		735A080D2A17FFDE1A084117 /* Pods-Sonar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonar/Pods-Sonar.release.xcconfig"; sourceTree = "<group>"; };
-		A0199FEC1C0508E300E0E56E /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
-		A0199FED1C0508E300E0E56E /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
-		A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMRestkitSetup.swift; sourceTree = "<group>"; };
-		A0199FF21C050DAA00E0E56E /* TMDatabaseQueryAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDatabaseQueryAssistant.h; sourceTree = "<group>"; };
-		A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDatabaseQueryAssistant.m; sourceTree = "<group>"; };
 		A0199FF51C050E6E00E0E56E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0524B171C021441009D5C27 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A09EA3201C031889008DB927 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +62,7 @@
 		A0E2682D1C020ECB00FA82C8 /* SonarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E268311C020ECB00FA82C8 /* SonarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarUITests.swift; sourceTree = "<group>"; };
 		A0E268331C020ECB00FA82C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F3E8C81C065FC50049EDBC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		A0F7F6981C02705B00D6445D /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		CD217C9D84B22135792A918E /* Pods-Sonar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sonar/Pods-Sonar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,13 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				A0E268111C020ECA00FA82C8 /* AppDelegate.swift */,
-				A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */,
 				A0524B171C021441009D5C27 /* Bridging-Header.h */,
 				A0E268181C020ECA00FA82C8 /* Assets.xcassets */,
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
-				A0199FF21C050DAA00E0E56E /* TMDatabaseQueryAssistant.h */,
-				A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -125,7 +114,6 @@
 				A0E268131C020ECA00FA82C8 /* ViewController.swift */,
 				A09EA3201C031889008DB927 /* LogViewController.swift */,
 				A0F7F6981C02705B00D6445D /* LogTableViewController.swift */,
-				A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -134,8 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */,
-				A0199FEC1C0508E300E0E56E /* Log.h */,
-				A0199FED1C0508E300E0E56E /* Log.m */,
+				A0F3E8C81C065FC50049EDBC /* Log.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -389,13 +376,10 @@
 			files = (
 				A0F7F6991C02705B00D6445D /* LogTableViewController.swift in Sources */,
 				A0E268141C020ECA00FA82C8 /* ViewController.swift in Sources */,
-				A0199FEF1C0508E300E0E56E /* Log.m in Sources */,
+				A0F3E8C91C065FC50049EDBC /* Log.swift in Sources */,
 				A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */,
-				A0385E6E1C04E78A00E707B2 /* Model.xcdatamodeld in Sources */,
-				A0199FF41C050DAA00E0E56E /* TMDatabaseQueryAssistant.m in Sources */,
 				A09EA3211C031889008DB927 /* LogViewController.swift in Sources */,
 				A0F7F6971C026E8A00D6445D /* LogTableViewCell.swift in Sources */,
-				A0199FF11C050CAC00E0E56E /* TMRestkitSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,19 +633,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */,
-			);
-			currentVersion = A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A0E268061C020ECA00FA82C8 /* Project object */;
 }

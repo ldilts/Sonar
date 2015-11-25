@@ -15,9 +15,6 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import <Google/CloudMessaging.h>
 
-#import "Log.h"
-
-#import "TMDatabaseQueryAssistant.h"
 
 
 

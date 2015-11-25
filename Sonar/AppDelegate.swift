@@ -28,36 +28,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        if !NSUserDefaults.standardUserDefaults().boolForKey("NotificationsSetup") {
-            // [START_EXCLUDE]
-            // Configure the Google context: parses the GoogleService-Info.plist, and initializes
-            // the services that have entries in the file
-            var configureError:NSError?
-            GGLContext.sharedInstance().configureWithError(&configureError)
-            assert(configureError == nil, "Error configuring Google services: \(configureError)")
-            gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
-            // [END_EXCLUDE]
-            
-            // Register for remote notifications
-            let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
-            // [END register_for_remote_notifications]
+        // [START_EXCLUDE]
+        // Configure the Google context: parses the GoogleService-Info.plist, and initializes
+        // the services that have entries in the file
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
+        // [END_EXCLUDE]
         
-            // [START start_gcm_service]
-            let gcmConfig = GCMConfig.defaultConfig()
-            gcmConfig.receiverDelegate = self
-            GCMService.sharedInstance().startWithConfig(gcmConfig)
-            // [END start_gcm_service]
-            
-//        }
+        // Register for remote notifications
+        let settings: UIUserNotificationSettings =
+        UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        // [END register_for_remote_notifications]
+    
+        // [START start_gcm_service]
+        let gcmConfig = GCMConfig.defaultConfig()
+        gcmConfig.receiverDelegate = self
+        GCMService.sharedInstance().startWithConfig(gcmConfig)
+        // [END start_gcm_service]
         
-        
-        
-        let baseURL: NSURL = NSURL(string: "http://192.168.1.106:8000/")!
-        
-        startRestkitWithBaseURL(baseURL)
+//        let baseURL: NSURL = NSURL(string: "http://localhost:8000/")!
+//        
+//        startRestkitWithBaseURL(baseURL)
         
         return true
     }
@@ -197,7 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // topic
         if(registrationToken != nil && connectedToGCM) {
 
-            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://192.168.1.106:8000"))
+            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://localhost:8000"))
             httpClient.parameterEncoding = AFJSONParameterEncoding
             httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
             
