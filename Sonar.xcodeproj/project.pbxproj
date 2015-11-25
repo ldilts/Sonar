@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		17B64DA2F619D2BC8AB8637B /* libPods-Sonar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 052F325C9B16AD97F8C73113 /* libPods-Sonar.a */; };
-		A0524B1B1C021C2B009D5C27 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0524B1A1C021C2B009D5C27 /* Log.swift */; };
+		A0199FEF1C0508E300E0E56E /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A0199FED1C0508E300E0E56E /* Log.m */; };
+		A0199FF11C050CAC00E0E56E /* TMRestkitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */; };
+		A0199FF41C050DAA00E0E56E /* TMDatabaseQueryAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */; };
+		A0199FF61C050E6E00E0E56E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0199FF51C050E6E00E0E56E /* CoreData.framework */; };
+		A0199FF81C050E7400E0E56E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */; };
+		A0385E6E1C04E78A00E707B2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */; };
+		A0385E701C04EC0800E707B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */; };
 		A09EA3211C031889008DB927 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09EA3201C031889008DB927 /* LogViewController.swift */; };
 		A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268111C020ECA00FA82C8 /* AppDelegate.swift */; };
 		A0E268141C020ECA00FA82C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268131C020ECA00FA82C8 /* ViewController.swift */; };
@@ -41,8 +47,16 @@
 /* Begin PBXFileReference section */
 		052F325C9B16AD97F8C73113 /* libPods-Sonar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sonar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		735A080D2A17FFDE1A084117 /* Pods-Sonar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonar/Pods-Sonar.release.xcconfig"; sourceTree = "<group>"; };
+		A0199FEC1C0508E300E0E56E /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		A0199FED1C0508E300E0E56E /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
+		A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMRestkitSetup.swift; sourceTree = "<group>"; };
+		A0199FF21C050DAA00E0E56E /* TMDatabaseQueryAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDatabaseQueryAssistant.h; sourceTree = "<group>"; };
+		A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDatabaseQueryAssistant.m; sourceTree = "<group>"; };
+		A0199FF51C050E6E00E0E56E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0524B171C021441009D5C27 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		A0524B1A1C021C2B009D5C27 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A09EA3201C031889008DB927 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A0E2680E1C020ECA00FA82C8 /* Sonar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E268111C020ECA00FA82C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0199FF81C050E7400E0E56E /* MobileCoreServices.framework in Frameworks */,
+				A0199FF61C050E6E00E0E56E /* CoreData.framework in Frameworks */,
 				17B64DA2F619D2BC8AB8637B /* libPods-Sonar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,10 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				A0E268111C020ECA00FA82C8 /* AppDelegate.swift */,
+				A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */,
 				A0524B171C021441009D5C27 /* Bridging-Header.h */,
 				A0E268181C020ECA00FA82C8 /* Assets.xcassets */,
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
+				A0199FF21C050DAA00E0E56E /* TMDatabaseQueryAssistant.h */,
+				A0199FF31C050DAA00E0E56E /* TMDatabaseQueryAssistant.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -106,6 +125,7 @@
 				A0E268131C020ECA00FA82C8 /* ViewController.swift */,
 				A09EA3201C031889008DB927 /* LogViewController.swift */,
 				A0F7F6981C02705B00D6445D /* LogTableViewController.swift */,
+				A0199FF01C050CAC00E0E56E /* TMRestkitSetup.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -113,8 +133,9 @@
 		A0524B1C1C021C2F009D5C27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0524B1A1C021C2B009D5C27 /* Log.swift */,
 				A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */,
+				A0199FEC1C0508E300E0E56E /* Log.h */,
+				A0199FED1C0508E300E0E56E /* Log.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -144,6 +165,7 @@
 		A0E268101C020ECA00FA82C8 /* Sonar */ = {
 			isa = PBXGroup;
 			children = (
+				A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */,
 				A0524B1C1C021C2F009D5C27 /* Model */,
 				A0E268151C020ECA00FA82C8 /* Main.storyboard */,
 				A0524B191C0218ED009D5C27 /* Controller */,
@@ -173,6 +195,8 @@
 		B38A98E5E5AD7351968DE819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */,
+				A0199FF51C050E6E00E0E56E /* CoreData.framework */,
 				052F325C9B16AD97F8C73113 /* libPods-Sonar.a */,
 			);
 			name = Frameworks;
@@ -198,7 +222,6 @@
 				A0E2680A1C020ECA00FA82C8 /* Sources */,
 				A0E2680B1C020ECA00FA82C8 /* Frameworks */,
 				A0E2680C1C020ECA00FA82C8 /* Resources */,
-				CB47EB7EFAC9FFDBADD40F12 /* Embed Pods Frameworks */,
 				E53853DFD9B5F59431E25E31 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -259,6 +282,14 @@
 					A0E2680D1C020ECA00FA82C8 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 69ZM7V3AUZ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A0E268211C020ECB00FA82C8 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -296,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E2681C1C020ECA00FA82C8 /* LaunchScreen.storyboard in Resources */,
+				A0385E701C04EC0800E707B2 /* GoogleService-Info.plist in Resources */,
 				A0E268191C020ECA00FA82C8 /* Assets.xcassets in Resources */,
 				A0E268171C020ECA00FA82C8 /* Main.storyboard in Resources */,
 			);
@@ -333,21 +365,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CB47EB7EFAC9FFDBADD40F12 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sonar/Pods-Sonar-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E53853DFD9B5F59431E25E31 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,10 +389,13 @@
 			files = (
 				A0F7F6991C02705B00D6445D /* LogTableViewController.swift in Sources */,
 				A0E268141C020ECA00FA82C8 /* ViewController.swift in Sources */,
+				A0199FEF1C0508E300E0E56E /* Log.m in Sources */,
 				A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */,
+				A0385E6E1C04E78A00E707B2 /* Model.xcdatamodeld in Sources */,
+				A0199FF41C050DAA00E0E56E /* TMDatabaseQueryAssistant.m in Sources */,
 				A09EA3211C031889008DB927 /* LogViewController.swift in Sources */,
 				A0F7F6971C026E8A00D6445D /* LogTableViewCell.swift in Sources */,
-				A0524B1B1C021C2B009D5C27 /* Log.swift in Sources */,
+				A0199FF11C050CAC00E0E56E /* TMRestkitSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.lucasdilts.Sonar;
@@ -531,6 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.lucasdilts.Sonar;
@@ -627,6 +649,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0385E6C1C04E78A00E707B2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */,
+			);
+			currentVersion = A0385E6D1C04E78A00E707B2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A0E268061C020ECA00FA82C8 /* Project object */;
 }

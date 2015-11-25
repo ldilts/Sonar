@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sonar/ViewController.swift"
-            timestampString = "470083129.044432"
+            timestampString = "470094046.331972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "configureRestKit()"
             landmarkType = "5">
          </BreakpointContent>

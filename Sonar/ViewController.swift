@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var circularView: UIView!
     
-    var logs = [AnyObject]()
+    var logs: [Log]!
     
     var distance = 0.0
     
@@ -27,6 +27,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if let data = TMDatabaseQueryAssistant.queryForEntity("Log") as? [Log] {
+            
+            self.logs = data
+        }
+        
         
         self.activityIndicator.startAnimating()
         self.statusLabel.alpha = 0.0
@@ -46,7 +52,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        initializeNotificationServices()
+//        initializeNotificationServices()
     }
     
 //    MARK: - Actions
@@ -146,26 +152,32 @@ class ViewController: UIViewController {
     
     func configureRestKit() {
         // initialize AFNetworking HTTPClient
-        let baseURL: NSURL = NSURL(string: "http://192.168.1.106:8000/")!
-        let client: AFHTTPClient = AFHTTPClient(baseURL: baseURL)
         
-        // initialize RestKit
-        let objectManager: RKObjectManager = RKObjectManager(HTTPClient: client)
+        
+        
         
         // setup object mappings
-        let logMapping: RKObjectMapping = RKObjectMapping(forClass: Log.self)
-        logMapping.addAttributeMappingsFromArray(["log_date", "log_open", "log_id"])
+        let logMapping: RKEntityMapping = RKEntityMapping(forEntityForName: "Log", inManagedObjectStore: RKManagedObjectStore.defaultStore())
+        
+        let attribute = ["log_date": "log_date",
+            "log_open": "log_open",
+            "log_id": "log_id"]
+        
+        logMapping.addAttributeMappingsFromDictionary(attribute)
         
         let responseDescriptor: RKResponseDescriptor! = RKResponseDescriptor(mapping: logMapping, method: RKRequestMethod.GET, pathPattern: "log/", keyPath: "results", statusCodes: NSIndexSet(index: 200))
         
-        objectManager.addResponseDescriptor(responseDescriptor)
+        RKObjectManager.sharedManager().addResponseDescriptor(responseDescriptor)
     }
     
     func loadLogs() {
+        
 
         
         RKObjectManager.sharedManager().getObjectsAtPath("log/", parameters: nil, success: { (operation: RKObjectRequestOperation!, mappingResult: RKMappingResult!) -> Void in
-            self.logs = mappingResult.array()
+            
+            self.logs = mappingResult.array() as! [Log]
+            
 //            self.tableView.reloadData()
             
 //            for log in self.logs {
@@ -226,16 +238,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initializeNotificationServices() -> Void {
-        let settings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        
-        // This is an asynchronous method to retrieve a Device Token
-        // Callbacks are in AppDelegate.swift
-        // Success = didRegisterForRemoteNotificationsWithDeviceToken
-        // Fail = didFailToRegisterForRemoteNotificationsWithError
-        UIApplication.sharedApplication().registerForRemoteNotifications()
-    }
+//    func initializeNotificationServices() -> Void {
+//        let settings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil)
+//        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+//        
+//        // This is an asynchronous method to retrieve a Device Token
+//        // Callbacks are in AppDelegate.swift
+//        // Success = didRegisterForRemoteNotificationsWithDeviceToken
+//        // Fail = didFailToRegisterForRemoteNotificationsWithError
+//        UIApplication.sharedApplication().registerForRemoteNotifications()
+//    }
 
 
 }
