@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         
         
-        let baseURL: NSURL = NSURL(string: "http://192.168.0.148:8000/")!
+        let baseURL: NSURL = NSURL(string: "http://192.168.1.106:8000/")!
         
         startRestkitWithBaseURL(baseURL)
         
@@ -197,7 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // topic
         if(registrationToken != nil && connectedToGCM) {
 
-            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://192.168.0.148:8000"))
+            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://192.168.1.106:8000"))
             httpClient.parameterEncoding = AFJSONParameterEncoding
             httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
             

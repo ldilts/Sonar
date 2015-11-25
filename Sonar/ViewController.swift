@@ -195,7 +195,7 @@ class ViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 self.statusLabel.hidden = false
                 self.statusLabel.alpha = 0.0
-                self.statusLabel.text = (self.logs[0] as! Log).log_open == 1 ? "Open" : "Closed"
+                self.statusLabel.text = self.logs[0].log_open == 1 ? "Open" : "Closed"
                 
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
                     self.activityIndicator.alpha = 0.0
@@ -203,6 +203,10 @@ class ViewController: UIViewController {
                 }, completion: { (success: Bool) -> Void in
                     self.activityIndicator.hidden = true
                 })
+                
+                for log in self.logs {
+                    print("\n\(log.log_id) \(log.log_open) \(log.log_date)\n")
+                }
                 
             }
             

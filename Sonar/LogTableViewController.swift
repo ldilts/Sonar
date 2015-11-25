@@ -10,13 +10,17 @@ import UIKit
 
 class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
-    var logs = [AnyObject]()
+    var logs = [Log]()
     var sortedLogs: [String: [Log]] = [String: [Log]]()
     var keys: [String] = [String]()
     var selectedLog: Log!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for log in logs {
+            print("\n\(log.log_id) \(log.log_open) \(log.log_date)\n")
+        }
         
         // Empty State Set up
         self.tableView.emptyDataSetSource = self
