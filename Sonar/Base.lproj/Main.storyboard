@@ -287,6 +287,7 @@
                         <outlet property="circularView" destination="Avz-uh-w6Q" id="j7Y-sp-QKQ"/>
                         <outlet property="detailLabel" destination="A24-jR-cKW" id="hwo-tB-Fcb"/>
                         <outlet property="distanceLabel" destination="OLP-zz-dku" id="3t0-Iv-TOa"/>
+                        <outlet property="sendButton" destination="wCF-45-6dX" id="t8R-4K-d2t"/>
                         <outlet property="sendButtonBackground" destination="SE2-dS-7Hm" id="lCR-aa-ngJ"/>
                         <outlet property="statusLabel" destination="0Zh-bx-T3c" id="cmW-2T-ub5"/>
                         <segue destination="lJq-yG-VYa" kind="show" identifier="LogsSegue" id="QPh-5c-g7B"/>

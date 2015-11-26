@@ -142,7 +142,7 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "These are not the drones you are looking for!")
+        return NSAttributedString(string: "These are not the logs you are looking for!")
     }
     
 //    MARK: - Empty State Delegate

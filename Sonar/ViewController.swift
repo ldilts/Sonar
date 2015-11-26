@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var sendButtonBackground: UIView!
+    @IBOutlet weak var sendButton: UIButton!
     
     var logs: [Log] = [Log]()
     
@@ -37,6 +38,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.circularView.layer.cornerRadius = ((UIScreen.mainScreen().bounds.size.width + 100.0) / 2.0)
         
         sendButtonBackground.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        self.sendButton.alpha = 0.0
+        self.sendButton.hidden = true
         
         self.configureRestKit()
     }
@@ -80,8 +83,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             self.circularView.transform = CGAffineTransformIdentity
             self.distanceLabel.text = "0.0"
             self.sendButtonBackground.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            self.sendButton.alpha = 0.0
             }, completion: { (success: Bool) -> Void in
                 self.deltaAngle = 0.0
+                self.sendButton.hidden = true
         })
     }
     
@@ -153,8 +158,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 //                self.distanceLabel.text = "\(self.distance)"
             }
             
+//            self.sendButton.alpha = 0.0
+            self.sendButton.hidden = false
+            
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.sendButtonBackground.transform = CGAffineTransformIdentity
+                self.sendButton.alpha = 1.0
             }, completion: { (success: Bool) -> Void in
                 
             })
