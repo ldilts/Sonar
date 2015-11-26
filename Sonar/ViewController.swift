@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var circularView: UIView!
+    @IBOutlet weak var sendButtonBackground: UIView!
     
     var logs: [Log] = [Log]()
     
@@ -34,11 +36,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.distanceLabel.text = "\(self.distance)"
         self.circularView.layer.cornerRadius = ((UIScreen.mainScreen().bounds.size.width + 100.0) / 2.0)
         
+        sendButtonBackground.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        
         self.configureRestKit()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.detailLabel.alpha = 0.0
         
         self.loadLogs()
 //        [[NSNotificationCenter defaultCenter]addObserver:myView selector:@selector(NotificationReceived:) name:@"notification" object:nil];
@@ -73,6 +79,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             self.circularView.transform = CGAffineTransformIdentity
             self.distanceLabel.text = "0.0"
+            self.sendButtonBackground.transform = CGAffineTransformMakeScale(1.2, 1.2)
             }, completion: { (success: Bool) -> Void in
                 self.deltaAngle = 0.0
         })
@@ -145,6 +152,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 
 //                self.distanceLabel.text = "\(self.distance)"
             }
+            
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.sendButtonBackground.transform = CGAffineTransformIdentity
+            }, completion: { (success: Bool) -> Void in
+                
+            })
         }
     }
     
@@ -193,6 +206,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                     self.statusLabel.alpha = 1.0
                 }, completion: { (success: Bool) -> Void in
                     self.activityIndicator.hidden = true
+                    
+                    UIView.animateWithDuration(0.75, delay: 2.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+                        self.detailLabel.alpha = 1.0
+                    }, completion: { (success: Bool) -> Void in
+                        
+                    })
                 })
                 
             }
