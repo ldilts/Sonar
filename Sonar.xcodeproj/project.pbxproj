@@ -12,6 +12,7 @@
 		A0199FF81C050E7400E0E56E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0199FF71C050E7400E0E56E /* MobileCoreServices.framework */; };
 		A0385E701C04EC0800E707B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */; };
 		A09EA3211C031889008DB927 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09EA3201C031889008DB927 /* LogViewController.swift */; };
+		A0C075DF1C087AE1000B5B6E /* Bass High Lite.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0C075DE1C087AE1000B5B6E /* Bass High Lite.wav */; };
 		A0E268121C020ECA00FA82C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268111C020ECA00FA82C8 /* AppDelegate.swift */; };
 		A0E268141C020ECA00FA82C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268131C020ECA00FA82C8 /* ViewController.swift */; };
 		A0E268171C020ECA00FA82C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E268151C020ECA00FA82C8 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0524B171C021441009D5C27 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A09EA3201C031889008DB927 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		A0C075DE1C087AE1000B5B6E /* Bass High Lite.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bass High Lite.wav"; sourceTree = "<group>"; };
 		A0E2680E1C020ECA00FA82C8 /* Sonar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E268111C020ECA00FA82C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E268131C020ECA00FA82C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				A0E268111C020ECA00FA82C8 /* AppDelegate.swift */,
 				A0524B171C021441009D5C27 /* Bridging-Header.h */,
 				A0E268181C020ECA00FA82C8 /* Assets.xcassets */,
+				A0C075DE1C087AE1000B5B6E /* Bass High Lite.wav */,
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
 				A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E2681C1C020ECA00FA82C8 /* LaunchScreen.storyboard in Resources */,
+				A0C075DF1C087AE1000B5B6E /* Bass High Lite.wav in Resources */,
 				A0385E701C04EC0800E707B2 /* GoogleService-Info.plist in Resources */,
 				A0E268191C020ECA00FA82C8 /* Assets.xcassets in Resources */,
 				A0E268171C020ECA00FA82C8 /* Main.storyboard in Resources */,

@@ -300,7 +300,7 @@
                         <outlet property="delegate" destination="BYZ-38-t0r" id="90R-Tr-o5W"/>
                     </connections>
                 </panGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="U4s-Wt-jU4">
+                <tapGestureRecognizer id="U4s-Wt-jU4">
                     <connections>
                         <action selector="circularViewDoubleTapped:" destination="BYZ-38-t0r" id="37h-HT-kFs"/>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="jFa-Ct-ket"/>

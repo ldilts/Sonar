@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -25,6 +26,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var startTransform: CGAffineTransform!
     var deltaAngle: CGFloat!
     
+    var sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Bass High Lite", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
+    
 //    MARK: -
     
     override func viewDidLoad() {
@@ -41,16 +45,24 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.sendButton.alpha = 0.0
         self.sendButton.hidden = true
         
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: sound)
+        } catch {
+            print("Something went wrong! \(error)")
+        }
+        
+        audioPlayer.prepareToPlay()
+        
         self.configureRestKit()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         self.detailLabel.alpha = 0.0
         
         self.loadLogs()
-//        [[NSNotificationCenter defaultCenter]addObserver:myView selector:@selector(NotificationReceived:) name:@"notification" object:nil];
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("loadLogs"), name: "ReloadDataNotification", object: nil)
     }
     
@@ -158,7 +170,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 //                self.distanceLabel.text = "\(self.distance)"
             }
             
-//            self.sendButton.alpha = 0.0
+//            self.sendButton.alpha = 0.0/Users/Lucas/Desktop/Bass High Lite.wav
             self.sendButton.hidden = false
             
             UIView.animateWithDuration(0.5, animations: { () -> Void in
@@ -209,6 +221,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.statusLabel.hidden = false
                 self.statusLabel.alpha = 0.0
                 self.statusLabel.text = self.logs[0].log_open == 1 ? "Open" : "Closed"
+                
+                self.audioPlayer.play()
                 
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
                     self.activityIndicator.alpha = 0.0
