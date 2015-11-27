@@ -18,10 +18,6 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for log in logs {
-            print("\n\(log.log_id) \(log.log_open) \(log.log_date)\n")
-        }
-        
         // Empty State Set up
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -34,14 +30,14 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
         formatter.dateFormat = "dd/MM/yyyy"
         
         for log in logs {
-            let dateString = formatter.stringFromDate((log as! Log).log_date!)
+            let dateString = formatter.stringFromDate(log.log_date!)
             
             if let _ = sortedLogs[dateString] {
                 var logsArray: [Log] = sortedLogs[dateString]! as [Log]
-                logsArray.append((log as! Log))
+                logsArray.append(log)
                 sortedLogs[dateString] = logsArray
             } else {
-                sortedLogs[dateString] = [(log as! Log)]
+                sortedLogs[dateString] = [log]
                 keys.append(dateString)
             }
         }

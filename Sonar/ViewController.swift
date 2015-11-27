@@ -165,20 +165,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 
                 let angleDifference = self.deltaAngle - ang
                 
-                self.distance += Double((((-angleDifference).radiansToDegrees) / 360.0) * 4.0)
+                self.distance += Double((((-angleDifference).radiansToDegrees) * 4.0) / 360.0)
                 
-//                self.distanceLabel.text = "\(self.distance)"
+                if self.distance < 0 {
+                    self.distance = 0.0
+                    
+                    UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+                        self.circularView.transform = CGAffineTransformIdentity
+                    }, completion: { (success: Bool) -> Void in
+                        
+                    })
+                    
+                }
+                
+                
+                self.distanceLabel.text = String(format: "%.2f", self.distance)
             }
             
-//            self.sendButton.alpha = 0.0/Users/Lucas/Desktop/Bass High Lite.wav
-            self.sendButton.hidden = false
-            
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.sendButtonBackground.transform = CGAffineTransformIdentity
-                self.sendButton.alpha = 1.0
-            }, completion: { (success: Bool) -> Void in
+            if self.distance < 0 {
+                self.sendButton.hidden = false
                 
-            })
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.sendButtonBackground.transform = CGAffineTransformIdentity
+                    self.sendButton.alpha = 1.0
+                }, completion: { (success: Bool) -> Void in
+                    
+                })
+            }
         }
     }
     
