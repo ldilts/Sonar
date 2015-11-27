@@ -90,6 +90,29 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         performSegueWithIdentifier("LogsSegue", sender: self)
     }
     
+    @IBAction func sendButtonTapped(sender: UIButton) {
+        let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://127.0.0.1:8000"))
+        httpClient.parameterEncoding = AFJSONParameterEncoding
+        httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
+        
+        let date: NSDate = NSDate()
+        
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.S"
+//        dateFormatter.timeZone = NSTimeZone(name: "UTC-3")
+        
+        print("\n Date: " + dateFormatter.stringFromDate(date) + "\n")
+        
+        let parameter = ["dist_id": 241120152203.0, "dist_distance": 1.30, "dist_date":dateFormatter.stringFromDate(date)]
+        
+        httpClient.postPath("distance/", parameters: parameter as [NSObject : AnyObject], success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+            print("\nSuccess!!\n")
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("\n\(error.description)\n")
+                
+        })
+    }
+    
     @IBAction func circularViewDoubleTapped(sender: UITapGestureRecognizer) {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             self.circularView.transform = CGAffineTransformIdentity
@@ -182,7 +205,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.distanceLabel.text = String(format: "%.2f", self.distance)
             }
             
-            if self.distance < 0 {
+//            if self.distance < 0 {
                 self.sendButton.hidden = false
                 
                 UIView.animateWithDuration(0.5, animations: { () -> Void in
@@ -191,7 +214,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 }, completion: { (success: Bool) -> Void in
                     
                 })
-            }
+//            }
         }
     }
     
