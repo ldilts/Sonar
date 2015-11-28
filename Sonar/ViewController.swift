@@ -91,7 +91,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func sendButtonTapped(sender: UIButton) {
-        let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://127.0.0.1:8000"))
+        let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://dilts.koding.io:8000"))
         httpClient.parameterEncoding = AFJSONParameterEncoding
         httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
         
@@ -229,7 +229,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func configureRestKit() {
         // initialize AFNetworking HTTPClient
-        let baseURL: NSURL = NSURL(string: "http://127.0.0.1:8000/")!
+        let baseURL: NSURL = NSURL(string: "http://dilts.koding.io:8000/")!
         let client: AFHTTPClient = AFHTTPClient(baseURL: baseURL)
         
         // initialize RestKit

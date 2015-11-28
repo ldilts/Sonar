@@ -37,12 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
         // [END_EXCLUDE]
         
-        // Register for remote notifications
-        let settings: UIUserNotificationSettings =
-        UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
-        // [END register_for_remote_notifications]
+//        if !NSUserDefaults.standardUserDefaults().boolForKey("NotificationsAccepted") {
+            // Register for remote notifications
+            let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+            // [END register_for_remote_notifications]
+//        }
     
         // [START start_gcm_service]
         let gcmConfig = GCMConfig.defaultConfig()
@@ -110,8 +112,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
             scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
         // [END get_gcm_reg_token]
-        
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "NotificationsSetup")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -192,13 +192,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // topic
         if(registrationToken != nil && connectedToGCM) {
 
-            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://localhost:8000"))
+            let httpClient: AFHTTPClient = AFHTTPClient(baseURL: NSURL(string: "http://dilts.koding.io:8000"))
             httpClient.parameterEncoding = AFJSONParameterEncoding
             httpClient.registerHTTPOperationClass(AFJSONRequestOperation)
             
             print("\n\(self.deviceTokenStr)\n")
             
-            let parameter = ["dev_id": "241120152203", "dev_type": "IOS", "reg_id": "\(self.registrationToken!)"]
+            let parameter = ["dev_id": "271120152319", "dev_type": "IOS", "reg_id": "\(self.registrationToken!)"]
             
             httpClient.postPath("devices/", parameters: parameter, success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                 self.subscribedToTopic = true;
