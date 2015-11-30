@@ -20,6 +20,7 @@
 		A0E2681C1C020ECA00FA82C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */; };
 		A0E268271C020ECB00FA82C8 /* SonarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268261C020ECB00FA82C8 /* SonarTests.swift */; };
 		A0E268321C020ECB00FA82C8 /* SonarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E268311C020ECB00FA82C8 /* SonarUITests.swift */; };
+		A0F3853E1C0CE010002F3C3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F3853D1C0CE010002F3C3F /* GoogleService-Info.plist */; };
 		A0F3E8C91C065FC50049EDBC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3E8C81C065FC50049EDBC /* Log.swift */; };
 		A0F620351C09552D00C9F850 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = A0F620341C09552D00C9F850 /* Todo */; };
 		A0F7F6971C026E8A00D6445D /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		A0E2682D1C020ECB00FA82C8 /* SonarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E268311C020ECB00FA82C8 /* SonarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarUITests.swift; sourceTree = "<group>"; };
 		A0E268331C020ECB00FA82C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F3853D1C0CE010002F3C3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F3E8C81C065FC50049EDBC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A0F620341C09552D00C9F850 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		A0F7F6961C026E8A00D6445D /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				A0C075DE1C087AE1000B5B6E /* Bass High Lite.wav */,
 				A0E2681A1C020ECA00FA82C8 /* LaunchScreen.storyboard */,
 				A0E2681D1C020ECA00FA82C8 /* Info.plist */,
+				A0F3853D1C0CE010002F3C3F /* GoogleService-Info.plist */,
 				A0385E6F1C04EC0800E707B2 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -325,6 +328,7 @@
 				A0E268191C020ECA00FA82C8 /* Assets.xcassets in Resources */,
 				A0F620351C09552D00C9F850 /* Todo in Resources */,
 				A0E268171C020ECA00FA82C8 /* Main.storyboard in Resources */,
+				A0F3853E1C0CE010002F3C3F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

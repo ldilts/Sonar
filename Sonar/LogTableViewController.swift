@@ -14,6 +14,8 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     var sortedLogs: [String: [Log]] = [String: [Log]]()
     var keys: [String] = [String]()
     var selectedLog: Log!
+    
+    var page: Int = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,8 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
                 keys.append(dateString)
             }
         }
+        
+        self.configureRestKit()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +73,6 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
         let cell = tableView.dequeueReusableCellWithIdentifier("LogCell", forIndexPath: indexPath) as! LogTableViewCell
 
         // Configure the cell...
-//        cell.log = self.logs[indexPath.row] as! Log
         var logsArray: [Log] = self.sortedLogs[self.keys[indexPath.section]]! as [Log]
         
         cell.log = logsArray[indexPath.row]
@@ -151,6 +154,73 @@ class LogTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNE
     
     @IBAction func backButtonTapped(sender: UIBarButtonItem) {
         self.performSegueWithIdentifier("UnwindToHome", sender: self)
+    }
+    
+//    MARK: - ZBTableViewDataSource
+//    func fetchMoreWithCompletion(aCompletion: ((NSError!) -> Void)!) {
+//        self.page++
+//
+//        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+//        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+//            // do some task
+//            self.loadLogs()
+//            dispatch_async(dispatch_get_main_queue()) {
+//                // update some UI
+//                self.tableView.reloadData()
+//                aCompletion(nil)
+//            }
+//        }
+//    }
+    
+//    MARK: - Helper Methods
+    
+    func configureRestKit() {
+        // initialize AFNetworking HTTPClient
+        let baseURL: NSURL = NSURL(string: "http://dilts.koding.io:8000/")!
+        let client: AFHTTPClient = AFHTTPClient(baseURL: baseURL)
+        
+        // initialize RestKit
+        let objectManager: RKObjectManager = RKObjectManager(HTTPClient: client)
+        
+        // setup object mappings
+        let logMapping: RKObjectMapping = RKObjectMapping(forClass: Log.self)
+        logMapping.addAttributeMappingsFromArray(["log_date", "log_open", "log_id"])
+        
+        let responseDescriptor: RKResponseDescriptor! = RKResponseDescriptor(mapping: logMapping, method: RKRequestMethod.GET, pathPattern: "log/?page=", keyPath: "results", statusCodes: NSIndexSet(index: 200))
+        
+        objectManager.addResponseDescriptor(responseDescriptor)
+    }
+    
+    func loadLogs() {
+        
+        RKObjectManager.sharedManager().getObjectsAtPath("log/?page=\(self.page)", parameters: nil, success: { (operation: RKObjectRequestOperation!, mappingResult: RKMappingResult!) -> Void in
+            
+            print("\nPage: \(self.page)\n")
+            
+            self.logs += mappingResult.array() as! [Log]
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            formatter.timeStyle = .ShortStyle
+            formatter.dateFormat = "dd/MM/yyyy"
+            
+            for log in self.logs {
+                let dateString = formatter.stringFromDate(log.log_date!)
+                
+                if let _ = self.sortedLogs[dateString] {
+                    var logsArray: [Log] = self.sortedLogs[dateString]! as [Log]
+                    logsArray.append(log)
+                    self.sortedLogs[dateString] = logsArray
+                } else {
+                    self.sortedLogs[dateString] = [log]
+                    self.keys.append(dateString)
+                }
+            }
+            
+            }, failure: { (operation: RKObjectRequestOperation!, error: NSError!) -> Void in
+                NSLog("What do you mean by 'there is no coffee?': %@", error)
+                
+        })
     }
 
     // MARK: - Navigation

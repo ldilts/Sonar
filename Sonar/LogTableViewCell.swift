@@ -21,6 +21,8 @@ class LogTableViewCell: UITableViewCell {
     
     func updateUI() {
         
+        self.backgroundColor = log.log_open == 1 ? UIColor(red: (170.0/255.0), green: (207.0/255.0), blue: (208.0/255.0), alpha: 0.25) : UIColor(red: (121.0/255.0), green: (168.0/255.0), blue: (169.0/255.0), alpha: 0.25)
+        
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         formatter.timeStyle = .MediumStyle

@@ -73,11 +73,11 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-bx-T3c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-bx-T3c">
                                 <rect key="frame" x="8" y="178" width="584" height="64"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="ySm-PI-2J4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="ySm-PI-2J4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="21" id="lBu-xZ-Ats"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGD-fP-mQj" userLabel="Bottom Status Label Spacer View">
@@ -126,12 +126,12 @@
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8k-uU-Qnu" userLabel="Top Send Button Spacer View">
-                                <rect key="frame" x="0.0" y="461" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="461" width="600" height="29.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvA-Cl-F54" userLabel="Send Button">
-                                <rect key="frame" x="260" y="490" width="80" height="80"/>
+                                <rect key="frame" x="260" y="490.5" width="80" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE2-dS-7Hm">
                                         <rect key="frame" x="4" y="4" width="72" height="72"/>
@@ -147,6 +147,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Send Button Confirmation Icon" translatesAutoresizingMaskIntoConstraints="NO" id="b8X-MY-huj">
+                                        <rect key="frame" x="4" y="4" width="72" height="72"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="12X-KB-8Le"/>
+                                            <constraint firstAttribute="width" constant="72" id="dcd-Ec-Bm3"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCF-45-6dX">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <animations/>
@@ -163,10 +171,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="9eU-nT-WRh"/>
                                     <constraint firstItem="SE2-dS-7Hm" firstAttribute="leading" secondItem="qvA-Cl-F54" secondAttribute="leading" constant="4" id="FRe-4V-KFi"/>
+                                    <constraint firstItem="b8X-MY-huj" firstAttribute="leading" secondItem="qvA-Cl-F54" secondAttribute="leading" constant="4" id="Icl-VJ-7J9"/>
+                                    <constraint firstItem="b8X-MY-huj" firstAttribute="top" secondItem="qvA-Cl-F54" secondAttribute="top" constant="4" id="QOG-Cf-ub6"/>
+                                    <constraint firstAttribute="bottom" secondItem="b8X-MY-huj" secondAttribute="bottom" constant="4" id="Rfn-zY-bV6"/>
                                     <constraint firstAttribute="width" constant="80" id="YeA-fq-1Sq"/>
                                     <constraint firstAttribute="trailing" secondItem="SE2-dS-7Hm" secondAttribute="trailing" constant="4" id="cHs-NW-muw"/>
                                     <constraint firstAttribute="width" secondItem="qvA-Cl-F54" secondAttribute="height" multiplier="1:1" id="cNe-rf-FRI"/>
                                     <constraint firstAttribute="bottom" secondItem="SE2-dS-7Hm" secondAttribute="bottom" constant="4" id="jIB-XB-c3y"/>
+                                    <constraint firstAttribute="trailing" secondItem="b8X-MY-huj" secondAttribute="trailing" constant="4" id="vpc-cc-XBx"/>
                                     <constraint firstItem="SE2-dS-7Hm" firstAttribute="top" secondItem="qvA-Cl-F54" secondAttribute="top" constant="4" id="wTn-lk-IhB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -176,7 +188,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sx2-ev-7MO" userLabel="Bottom Send Button Spacer View">
-                                <rect key="frame" x="0.0" y="570" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="570.5" width="600" height="29.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -292,6 +304,7 @@
                         <outlet property="distanceLabel" destination="OLP-zz-dku" id="3t0-Iv-TOa"/>
                         <outlet property="sendButton" destination="wCF-45-6dX" id="t8R-4K-d2t"/>
                         <outlet property="sendButtonBackground" destination="SE2-dS-7Hm" id="lCR-aa-ngJ"/>
+                        <outlet property="sendButtonConfirmationIcon" destination="b8X-MY-huj" id="aWM-DH-Lqc"/>
                         <outlet property="statusLabel" destination="0Zh-bx-T3c" id="cmW-2T-ub5"/>
                         <segue destination="lJq-yG-VYa" kind="show" identifier="LogsSegue" id="QPh-5c-g7B"/>
                     </connections>
@@ -316,7 +329,7 @@
         <scene sceneID="u4G-E0-j0b">
             <objects>
                 <tableViewController id="tkY-Z3-lVO" customClass="LogTableViewController" customModule="Sonar" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jBg-Xe-moP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jBg-Xe-moP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -326,7 +339,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ZK-39-j11" id="sMj-nA-hnb">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CQ-iE-awd">
@@ -416,7 +429,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Gce-xW-AOs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -462,5 +475,6 @@
     </scenes>
     <resources>
         <image name="Circular Control" width="700" height="700"/>
+        <image name="Send Button Confirmation Icon" width="72" height="72"/>
     </resources>
 </document>

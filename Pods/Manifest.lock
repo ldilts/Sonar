@@ -54,11 +54,13 @@ PODS:
   - RKValueTransformers (1.1.2)
   - SOCKit (1.1)
   - TransitionKit (2.2.1)
+  - ZBTableView (0.2.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.7)
   - Google/CloudMessaging
   - RestKit (~> 0.26)
+  - ZBTableView (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
@@ -76,5 +78,6 @@ SPEC CHECKSUMS:
   RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
+  ZBTableView: 42f2f25e7837aa07fd93e85e4dc167ccf9efb73f
 
 COCOAPODS: 0.38.2

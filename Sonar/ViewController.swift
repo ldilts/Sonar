@@ -18,7 +18,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var sendButtonBackground: UIView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var sendButtonConfirmationIcon: UIImageView!
     
+    var successImage: UIImage = UIImage(named: "Send Button Confirmation Icon")!
+    var errorImage: UIImage = UIImage(named: "Send Button Error Icon")!
+
     var logs: [Log] = [Log]()
     
     var distance = 0.0
@@ -103,13 +107,36 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         print("\n Date: " + dateFormatter.stringFromDate(date) + "\n")
         
-        let parameter = ["dist_id": 241120152203.0, "dist_distance": 1.30, "dist_date":dateFormatter.stringFromDate(date)]
+        let parameter = ["dist_id": 241120152203.0, "dist_distance": self.distance, "dist_date":dateFormatter.stringFromDate(date)]
         
         httpClient.postPath("distance/", parameters: parameter as [NSObject : AnyObject], success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
             print("\nSuccess!!\n")
+            
+            /*
+            theLabel.layer.backgroundColor = [UIColor whiteColor].CGColor;
+            
+            [UIView animateWithDuration:2.0 animations:^{
+            theLabel.layer.backgroundColor = [UIColor greenColor].CGColor;
+            } completion:NULL];
+            */
+            
+            self.sendButtonConfirmationIcon.image = self.successImage
+            self.sendButton.hidden = true
+            self.sendButtonConfirmationIcon.alpha = 1.0
+            self.sendButtonConfirmationIcon.hidden = false
+            
+            self.animateSendButton()
+
+            
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 print("\n\(error.description)\n")
                 
+                self.sendButtonConfirmationIcon.image = self.errorImage
+                self.sendButton.hidden = true
+                self.sendButtonConfirmationIcon.alpha = 1.0
+                self.sendButtonConfirmationIcon.hidden = false
+                
+                self.animateSendButton()
         })
     }
     
@@ -171,11 +198,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 // Current Angle
                 view.transform = CGAffineTransformRotate(startTransform, -angleDifference)
                 
-                let radians: CGFloat = atan2(view.transform.b, view.transform.a)
+//                let radians: CGFloat = atan2(view.transform.b, view.transform.a)
 
-                let text =  String(format: "%.2f", radians < 0 ? (CGFloat(M_PI) + CGFloat(M_PI) + radians).radiansToDegrees : radians.radiansToDegrees)
+//                let text =  String(format: "%.2f", radians < 0 ? (CGFloat(M_PI) + CGFloat(M_PI) + radians).radiansToDegrees : radians.radiansToDegrees)
                 
-                self.distanceLabel.text = "\(text)"
+//                self.distanceLabel.text = "\(text)"
                 
             }
         }
@@ -188,7 +215,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 
                 let angleDifference = self.deltaAngle - ang
                 
-                self.distance += Double((((-angleDifference).radiansToDegrees) * 4.0) / 360.0)
+                self.distance += Double(((-angleDifference).radiansToDegrees) / 10.0)
                 
                 if self.distance < 0 {
                     self.distance = 0.0
@@ -288,6 +315,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                     self.statusLabel.alpha = 1.0
                     }, completion: { (success: Bool) -> Void in
                         self.activityIndicator.hidden = true
+                })
+        })
+    }
+    
+    func animateSendButton() {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.sendButtonBackground.backgroundColor = UIColor(red: (31.0/255.0), green: (78.0/255.0), blue: (95.0/255.0), alpha: 1.0)
+            }, completion: { (success: Bool) -> Void in
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.sendButtonBackground.backgroundColor = UIColor.whiteColor()
+                    }, completion: { (success: Bool) -> Void in
+                        UIView.animateWithDuration(0.1, animations: { () -> Void in
+                            self.sendButtonConfirmationIcon.alpha = 0.0
+                            }, completion: { (success: Bool) -> Void in
+                                self.sendButtonConfirmationIcon.hidden = true
+                                self.sendButton.hidden = false
+                        })
                 })
         })
     }
